@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Alex & Taylor's Wedding</title>
+    <style>
+        /* CSS Variables for easy color theme changes */
+        :root {
+            --primary-color: #5d7052; /* Elegant Sage Green */
+            --background-color: #faf9f6; /* Soft Off-White */
+            --text-color: #333333;
+            --font-heading: 'Georgia', serif;
+            --font-body: 'Helvetica Neue', Arial, sans-serif;
+        }
+
+        body {
+            font-family: var(--font-body);
+            background-color: var(--background-color);
+            color: var(--text-color);
+            margin: 0;
+            padding: 0;
+            text-align: center;
+        }
+
+        /* Hero Section */
+        header {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background-color: #e9ece4;
+            background-image: linear-gradient(180deg, #e9ece4 0%, var(--background-color) 100%);
+            padding: 20px;
+        }
+
+        .pre-title {
+            letter-spacing: 4px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            margin-bottom: 10px;
+            color: #666;
+        }
+
+        h1 {
+            font-family: var(--font-heading);
+            font-size: clamp(3rem, 8vw, 5rem);
+            margin: 0;
+            color: var(--primary-color);
+            font-weight: normal;
+        }
+
+        .date {
+            font-size: 1.5rem;
+            margin-top: 20px;
+            letter-spacing: 2px;
+        }
+
+        /* Countdown Timer */
+        .countdown {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin-top: 40px;
+        }
+
+        .countdown div {
+            background: white;
+            padding: 15px 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            min-width: 70px;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .countdown span {
+            display: block;
+            font-size: 2.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            font-family: var(--font-heading);
+            margin-bottom: 5px;
+        }
+
+        /* Content Sections */
+        .section {
+            padding: 80px 20px;
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        h2 {
+            font-family: var(--font-heading);
+            color: var(--primary-color);
+            font-size: 2.5rem;
+            margin-bottom: 30px;
+            font-weight: normal;
+        }
+
+        .details-card {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.03);
+            line-height: 1.8;
+            font-size: 1.1rem;
+        }
+
+        /* RSVP Form */
+        form {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+            max-width: 500px;
+            margin: 0 auto;
+            text-align: left;
+        }
+
+        label {
+            font-weight: bold;
+            font-size: 0.9rem;
+        }
+
+        input, select, button {
+            width: 100%;
+            padding: 15px;
+            font-size: 1rem;
+            border: 1px solid #ddd;
+            border-radius: 6px;
+            box-sizing: border-box;
+            font-family: var(--font-body);
+        }
+
+        input:focus, select:focus {
+            outline: none;
+            border-color: var(--primary-color);
+            box-shadow: 0 0 5px rgba(93, 112, 82, 0.2);
+        }
+
+        button {
+            background-color: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            font-weight: bold;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            margin-top: 10px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #4a5a41;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="pre-title">We are getting married</div>
+        <h1>Alex & Taylor</h1>
+        <div class="date">September 12, 2026</div>
+        
+        <div class="countdown" id="countdown">
+            <div><span id="days">00</span> Days</div>
+            <div><span id="hours">00</span> Hours</div>
+            <div><span id="minutes">00</span> Mins</div>
+            <div><span id="seconds">00</span> Secs</div>
+        </div>
+    </header>
+
+    <!-- Event Details -->
+    <div class="section" id="details">
+        <h2>The Details</h2>
+        <div class="details-card">
+            <p><strong>When:</strong><br> Saturday, September 12, 2026 at 4:00 PM</p>
+            <p><strong>Where:</strong><br> The Grand Botanical Gardens<br>123 Nature Way, Flora City, FC 12345</p>
+            <p><em>Reception to follow immediately after the ceremony. Dress code is semi-formal. We can't wait to celebrate with you!</em></p>
+        </div>
+    </div>
+
+    <!-- RSVP Section -->
+    <div class="section" id="rsvp">
+        <h2>RSVP</h2>
+        <p style="margin-bottom: 30px;">Please kindly respond by August 1st, 2026.</p>
+        
+        <!-- The form uses a simple JavaScript alert for demonstration -->
+        <form onsubmit="event.preventDefault(); alert('Thank you! Your RSVP has been received.');">
+            <div>
+                <label for="name">Full Name(s)</label>
+                <input type="text" id="name" placeholder="E.g., Jane & John Doe" required>
+            </div>
+            
+            <div>
+                <label for="email">Email Address</label>
+                <input type="email" id="email" placeholder="your@email.com" required>
+            </div>
+
+            <div>
+                <label for="attendance">Will you attend?</label>
+                <select id="attendance" required>
+                    <option value="" disabled selected>Select an option...</option>
+                    <option value="yes">Joyfully Accept</option>
+                    <option value="no">Regretfully Decline</option>
+                </select>
+            </div>
+
+            <div>
+                <label for="meal">Meal Preference (if attending)</label>
+                <select id="meal">
+                    <option value="" disabled selected>Select a meal...</option>
+                    <option value="chicken">Herb Roasted Chicken</option>
+                    <option value="beef">Braised Short Rib</option>
+                    <option value="vegetarian">Mushroom Risotto (Vegetarian)</option>
+                    <option value="declining">Not Attending</option>
+                </select>
+            </div>
+
+            <button type="submit">Send RSVP</button>
+        </form>
+    </div>
+
+    <!-- Countdown Timer Logic -->
+    <script>
+        // Set the date we're counting down to (Month Day, Year HH:MM:SS)
+        const weddingDate = new Date("Sep 12, 2026 16:00:00").getTime();
+
+        // Update the count down every 1 second
+        const timer = setInterval(function() {
+            const now = new Date().getTime();
+            const distance = weddingDate - now;
+
+            // Time calculations for days, hours, minutes and seconds
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            const seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+            // Output the result in the elements, padding with zero if needed (e.g., "09")
+            document.getElementById("days").innerText = days.toString().padStart(2, '0');
+            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
+            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
+            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+
+            // If the countdown is over, display a message
+            if (distance < 0) {
+                clearInterval(timer);
+                document.getElementById("countdown").innerHTML = "<span>Today is the day!</span>";
+            }
+        }, 1000);
+    </script>
+</body>
+</html>
