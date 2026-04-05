@@ -111,6 +111,10 @@
         }
 
         /* RSVP Form */
+        .rsvp-deadline {
+            margin-bottom: 30px;
+        }
+
         form {
             display: flex;
             flex-direction: column;
@@ -139,6 +143,11 @@
             outline: none;
             border-color: var(--primary-color);
             box-shadow: 0 0 5px rgba(93, 112, 82, 0.2);
+        }
+
+        /* Hidden by default, shown via JS when attending */
+        #meal-group {
+            display: none; 
         }
 
         button {
@@ -187,10 +196,9 @@
     <!-- RSVP Section -->
     <div class="section" id="rsvp">
         <h2>RSVP</h2>
-        <p style="margin-bottom: 30px;">Please kindly respond by August 1st, 2026.</p>
+        <p class="rsvp-deadline">Please kindly respond by August 1st, 2026.</p>
         
-        <!-- The form uses a simple JavaScript alert for demonstration -->
-        <form onsubmit="event.preventDefault(); alert('Thank you! Your RSVP has been received.');">
+        <form id="rsvp-form" onsubmit="event.preventDefault(); alert('Thank you! Your RSVP has been received.');">
             <div>
                 <label for="name">Full Name(s)</label>
                 <input type="text" id="name" placeholder="E.g., Jane & John Doe" required>
@@ -210,14 +218,13 @@
                 </select>
             </div>
 
-            <div>
-                <label for="meal">Meal Preference (if attending)</label>
+            <div id="meal-group">
+                <label for="meal">Meal Preference</label>
                 <select id="meal">
                     <option value="" disabled selected>Select a meal...</option>
                     <option value="chicken">Herb Roasted Chicken</option>
                     <option value="beef">Braised Short Rib</option>
                     <option value="vegetarian">Mushroom Risotto (Vegetarian)</option>
-                    <option value="declining">Not Attending</option>
                 </select>
             </div>
 
@@ -225,10 +232,26 @@
         </form>
     </div>
 
-    <!-- Countdown Timer Logic -->
     <script>
+        // Form Logic: Conditionally show the meal selection based on attendance
+        const attendanceSelect = document.getElementById('attendance');
+        const mealGroup = document.getElementById('meal-group');
+        const mealSelect = document.getElementById('meal');
+
+        attendanceSelect.addEventListener('change', function() {
+            if (this.value === 'yes') {
+                mealGroup.style.display = 'block';
+                mealSelect.setAttribute('required', 'true');
+            } else {
+                mealGroup.style.display = 'none';
+                mealSelect.removeAttribute('required');
+                mealSelect.value = ''; // Reset the meal value if they decline
+            }
+        });
+
         // Set the date we're counting down to (Month Day, Year HH:MM:SS)
-        const weddingDate = new Date("Sep 12, 2026 16:00:00").getTime();
+        // Fixed: Adjusted to August 15, 2026 to match the HTML header text
+        const weddingDate = new Date("August 15, 2026 16:00:00").getTime();
 
         // Update the count down every 1 second
         const timer = setInterval(function() {
