@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -188,9 +188,9 @@
     <header>
         <div class="pre-title">On se marie</div>
         <h1>Sevak & Lara</h1>
-        <div class="date">August 15, 2026</div>
+        <div class="date">15 Août 2026</div>
         
-        <div class="countdown" id="countdown" aria-label="Countdown to wedding">
+        <div class="countdown" id="countdown" aria-label="Compte à rebours du mariage">
             <div><span id="days">00</span> Jours</div>
             <div><span id="hours">00</span> Heures</div>
             <div><span id="minutes">00</span> Mins</div>
@@ -227,7 +227,7 @@
             <h2>Formulaire de présence</h2>
             <p class="rsvp-deadline">Veuillez nous donner votre réponse avant le 1er Août 2026.</p>
             
-            <form id="rsvp-form" onsubmit="event.preventDefault(); alert('Merci votre présence a été validée.');" method="POST">
+            <form id="rsvp-form" method="POST">
                 <div>
                     <label for="name">Nom(s) complet(s)</label>
                     <input type="text" id="name" name="name" placeholder="Prénom Nom" autocomplete="name" required>
@@ -235,7 +235,7 @@
                 
                 <div>
                     <label for="email">Votre adresse mail</label>
-                    <input type="email" id="email" name="email" placeholder="your@email.com" autocomplete="email" required>
+                    <input type="email" id="email" name="email" placeholder="votre@email.com" autocomplete="email" required>
                 </div>
 
                 <div>
@@ -253,8 +253,15 @@
     </main>
 
     <script>
-        // Set the date we're counting down to (Month Day, Year HH:MM:SS)
-        const weddingDate = new Date("August 15, 2026 14:00:00").getTime(); // Set to 2:00 PM based on the first event
+        // Set the date we're counting down to
+        const weddingDate = new Date("August 15, 2026 14:00:00").getTime();
+
+        // Cache DOM elements for better performance
+        const countdownEl = document.getElementById("countdown");
+        const daysEl = document.getElementById("days");
+        const hoursEl = document.getElementById("hours");
+        const minutesEl = document.getElementById("minutes");
+        const secondsEl = document.getElementById("seconds");
 
         // Update the count down every 1 second
         const timer = setInterval(function() {
@@ -267,18 +274,25 @@
             const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
             const seconds = Math.floor((distance % (1000 * 60)) / 1000);
 
-            // Output the result in the elements, padding with zero if needed (e.g., "09")
-            document.getElementById("days").innerText = days.toString().padStart(2, '0');
-            document.getElementById("hours").innerText = hours.toString().padStart(2, '0');
-            document.getElementById("minutes").innerText = minutes.toString().padStart(2, '0');
-            document.getElementById("seconds").innerText = seconds.toString().padStart(2, '0');
+            // Output the result in the elements, padding with zero if needed
+            daysEl.innerText = days.toString().padStart(2, '0');
+            hoursEl.innerText = hours.toString().padStart(2, '0');
+            minutesEl.innerText = minutes.toString().padStart(2, '0');
+            secondsEl.innerText = seconds.toString().padStart(2, '0');
 
-            // If the countdown is over, display a message
+            // If the countdown is over, display a localized message
             if (distance < 0) {
                 clearInterval(timer);
-                document.getElementById("countdown").innerHTML = "<span>Today is the day!</span>";
+                countdownEl.innerHTML = "<span>C'est le grand jour !</span>";
             }
         }, 1000);
+
+        // Handle RSVP Form Submission
+        document.getElementById('rsvp-form').addEventListener('submit', function(event) {
+            event.preventDefault();
+            // Future logic to send form data to a server can go here
+            alert('Merci, votre présence a été validée.');
+        });
     </script>
 </body>
 </html>
