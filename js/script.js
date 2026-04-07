@@ -1,5 +1,5 @@
-// Set the date we're counting down to
-const weddingDate = new Date("August 15, 2026 14:00:00").getTime();
+// Use the ISO 8601 Date format (YYYY-MM-DDTHH:MM:SS) for full browser compatibility
+const weddingDate = new Date("2026-08-15T14:00:00").getTime();
 
 // Cache DOM elements for better performance
 const countdownEl = document.getElementById("countdown");
@@ -36,12 +36,14 @@ const timer = setInterval(function() {
     }
 }, 1000);
 
-// Handle RSVP Form Submission
+// Handle RSVP Form Submission (Displays alert if action URL is empty)
 const rsvpForm = document.getElementById('rsvp-form');
 if (rsvpForm) {
     rsvpForm.addEventListener('submit', function(event) {
-        event.preventDefault();
-        // Future logic to send form data to a server can go here
-        alert('Merci, votre réponse a bien été enregistrée.');
+        // If you connect Formspree, the 'action' attribute will handle the redirect automatically.
+        if (!rsvpForm.getAttribute('action')) {
+            event.preventDefault();
+            alert('Merci, votre réponse a bien été enregistrée.');
+        }
     });
 }
