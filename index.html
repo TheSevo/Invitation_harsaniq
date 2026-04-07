@@ -1,25 +1,107 @@
-<!-- Replace your current <form> tag with this. 
-     Replace 'YOUR_FORM_ID' with the code Formspree gives you. -->
-<form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
-    <div>
-        <label for="name">Nom(s) complet(s)</label>
-        <!-- Ensure the name attributes are set correctly so they show up in your email -->
-        <input type="text" id="name" name="Nom de l'invité" placeholder="Prénom Nom" required>
-    </div>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sevak & Lara</title>
     
-    <div>
-        <label for="email">Votre adresse mail</label>
-        <input type="email" id="email" name="Email" placeholder="votre@email.com" required>
-    </div>
+    <!-- Primary Meta Tags -->
+    <meta name="title" content="Mariage de Sevak & Lara">
+    <meta name="description" content="Rejoignez-nous pour célébrer le mariage de Sevak et Lara le 15 Août 2026. RSVP et détails de l'événement.">
 
-    <div>
-        <label for="attendance">Serez-vous présents ?</label>
-        <select id="attendance" name="Présence" required>
-            <option value="" disabled selected>Choisissez une option...</option>
-            <option value="Oui">Avec grand plaisir !</option>
-            <option value="Non">Malheureusement absent</option>
-        </select>
-    </div>
+    <!-- Open Graph / WhatsApp / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://thesevo.github.io/SevoLara_harsaniq/">
+    <meta property="og:title" content="Mariage de Sevak & Lara">
+    <meta property="og:description" content="Rejoignez-nous pour célébrer notre mariage le 15 Août 2026 !">
+    <meta property="og:image" content="https://thesevo.github.io/SevoLara_harsaniq/images/background-main.jpeg">
 
-    <button type="submit">Envoyer réponse</button>
-</form>
+    <!-- Link to external CSS file -->
+    <link rel="stylesheet" href="./css/style.css">
+</head>
+<body>
+
+    <!-- Hero Section -->
+    <header>
+        <div class="pre-title">On se marie</div>
+        <h1>Sevak & Lara</h1>
+        <div class="date">15 Août 2026</div>
+        
+        <div class="countdown" id="countdown" aria-label="Compte à rebours du mariage">
+            <div><span id="days">00</span> Jours</div>
+            <div><span id="hours">00</span> Heures</div>
+            <div><span id="minutes">00</span> Mins</div>
+            <div><span id="seconds">00</span> Secs</div>
+        </div>
+    </header>
+
+    <main>
+        <!-- Event Details -->
+        <section class="section" id="details">
+            <h2>Les Détails</h2>
+            <p><em>Toutes les couleurs sont autorisées sauf le blanc.</em></p>
+            
+            <div class="details-grid">
+                <!-- Location 1 -->
+                <div class="details-card">
+                    <h3>Cérémonie</h3>
+                    <p><strong>Heure:</strong> 14h00</p>
+                    <p><strong>Lieu:</strong> Monastère de Geghard<br>Geghardavank, Kotayk</p>
+                </div>
+
+                <!-- Location 2 -->
+                <div class="details-card">
+                    <h3>Fête</h3>
+                    <p><strong>Heure:</strong> 18h00</p>
+                    <p><strong>Lieu:</strong> Astafyan Hall<br>Jrvej, Kotayk</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Photo Gallery Section -->
+        <section class="section" id="gallery">
+            <h2>Notre Histoire</h2>
+            
+            <div class="gallery-grid">
+                <img src="./images/background-1.jpeg" alt="Sevak et Lara 1" loading="lazy">
+                <img src="./images/background-2.jpeg" alt="Sevak et Lara 2" loading="lazy">
+                <img src="./images/background-3.jpeg" alt="Sevak et Lara 3" loading="lazy">
+                <img src="./images/background-4.jpeg" alt="Sevak et Lara 4" loading="lazy">
+            </div>
+        </section>
+
+        <!-- RSVP Section -->
+        <section class="section" id="rsvp">
+            <h2>Formulaire de présence</h2>
+            <p class="rsvp-deadline">Veuillez nous donner votre réponse avant le 1er Août 2026.</p>
+            
+            <!-- Note: Don't forget to replace YOUR_FORM_ID once you set up Formspree! -->
+            <form id="rsvp-form" action="https://formspree.io/f/YOUR_FORM_ID" method="POST">
+                <div>
+                    <label for="name">Nom(s) complet(s)</label>
+                    <input type="text" id="name" name="Nom de l'invité" placeholder="Prénom Nom" autocomplete="name" required>
+                </div>
+                
+                <div>
+                    <label for="email">Votre adresse mail</label>
+                    <input type="email" id="email" name="Email" placeholder="votre@email.com" autocomplete="email" required>
+                </div>
+
+                <div>
+                    <label for="attendance">Serez-vous présents ?</label>
+                    <select id="attendance" name="Présence" required>
+                        <option value="" disabled selected>Choisissez une option...</option>
+                        <option value="Oui">Avec grand plaisir !</option>
+                        <option value="Non">Malheureusement absent</option>
+                    </select>
+                </div>
+
+                <button type="submit">Envoyer réponse</button>
+            </form>
+        </section>
+    </main>
+
+    <!-- Link to external JavaScript file -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
