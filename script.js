@@ -1,6 +1,6 @@
 // Set the date we're counting down to
 // Format: "Month Day, Year HH:MM:SS"
-const weddingDate = new Date("October 10, 2026 14:00:00").getTime();
+const weddingDate = new Date("August 15, 2026 14:00:00").getTime();
 
 // Find the countdown element
 const countdownElement = document.getElementById("countdown");
@@ -16,7 +16,7 @@ const updateCountdown = setInterval(function() {
     // If the count down is finished, write some text
     if (distance < 0) {
         clearInterval(updateCountdown);
-        countdownElement.innerHTML = "Happily Married!";
+        countdownElement.innerHTML = "JOUR J !!!!!";
         return;
     }
 
