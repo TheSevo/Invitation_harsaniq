@@ -54,7 +54,7 @@ nav a:hover {
     align-items: center;
     justify-content: center;
     text-align: center;
-    background-image: linear-gradient(rgba(253, 250, 246, 0.7), rgba(253, 250, 246, 0.7)), url('Background bloc 1.jpeg');
+    background-image: url('Background bloc 1.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -98,7 +98,7 @@ h2 {
 
 /* Details Section */
 .details {
-    background-image: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('Background bloc 2.jpeg');
+    background-image: url('Background bloc 2.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -132,7 +132,7 @@ h2 {
 
 /* RSVP Form */
 .rsvp-section {
-    background-image: linear-gradient(rgba(253, 250, 246, 0.7), rgba(253, 250, 246, 0.7)), url('Background bloc 3.jpeg');
+    background-image: url('Background bloc 3.jpeg');
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
