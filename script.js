@@ -1,6 +1,6 @@
 // Set the date we're counting down to
 // Format: "Month Day, Year HH:MM:SS"
-const weddingDate = new Date("august 15, 2026 00:00:00").getTime();
+const weddingDate = new Date("August 15, 2026 14:00:00").getTime();
 
 // Find the countdown element
 const countdownElement = document.getElementById("countdown");
@@ -17,7 +17,7 @@ const updateCountdown = setInterval(function() {
     if (distance < 0) {
         clearInterval(updateCountdown);
         countdownElement.innerHTML = "JOUR J !!!!!";
-
+        
         // Trigger the confetti effect using the website's theme colors
         if (typeof confetti === 'function') {
             confetti({
@@ -39,3 +39,16 @@ const updateCountdown = setInterval(function() {
     // Display the result
     countdownElement.innerHTML = `${days}d ${hours}h ${minutes}m ${seconds}s`;
 }, 1000);
+
+// Scroll Fade-In Animation Logic
+const fadeElements = document.querySelectorAll('.fade-in');
+
+const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            entry.target.classList.add('visible'); // Triggers animation when scrolled into view
+        }
+    });
+}, { threshold: 0.1 }); // Starts animation when 10% of the element is visible on screen
+
+fadeElements.forEach(element => observer.observe(element));
