@@ -1,6 +1,6 @@
 // Set the date we're counting down to
 // Format: "Month Day, Year HH:MM:SS"
-const weddingDate = new Date("august 15, 2026 14:00:00").getTime();
+const weddingDate = new Date("august 15, 2026 00:00:00").getTime();
 
 // Find the countdown element
 const countdownElement = document.getElementById("countdown");
