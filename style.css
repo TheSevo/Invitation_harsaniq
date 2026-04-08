@@ -200,3 +200,10 @@ footer {
     color: #fff;
     font-size: 0.9rem;
 }
+
+/* iOS Safari Fallback: Disables the broken fixed background to prevent the "zoomed-in" bug */
+@supports (-webkit-touch-callout: none) {
+    .hero, .details, .rsvp-section {
+        background-attachment: scroll !important;
+    }
+}
