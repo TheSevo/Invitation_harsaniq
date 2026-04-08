@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sevo & Lara | Harsaniq</title>
+    <title>Sevo & Lara ❤️</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
@@ -11,9 +11,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Home</a></li>
-                <li><a href="#details">Details</a></li>
-                <li><a href="#rsvp">RSVP</a></li>
+                <li><a href="#home">Accueil</a></li>
+                <li><a href="#details">Détails</a></li>
+                <li><a href="#rsvp">Formulaire</a></li>
             </ul>
         </nav>
     </header>
@@ -22,62 +22,57 @@
     <section id="home" class="hero">
         <div class="hero-content">
             <h1>Sevo & Lara</h1>
-            <p>We are getting married!</p>
+            <p>On se marie !</p>
             <h2 id="countdown">Loading countdown...</h2>
-            <p class="date-location">October 10, 2026 • Yerevan, Armenia</p>
+            <p class="date-location">15 Août 2026 • Arménie</p>
         </div>
     </section>
 
     <!-- Wedding Details Section -->
     <section id="details" class="details">
-        <h2>Wedding Details</h2>
+        <h2>Détails</h2>
         <div class="details-container">
             <div class="detail-box">
-                <h3>Ceremony</h3>
-                <p><strong>2:00 PM</strong></p>
-                <p>Saint Gregory the Illuminator Cathedral<br>Yerevan, Armenia</p>
+                <h3>Cérémonie</h3>
+                <p><strong>14h00</strong></p>
+                <p>Monastère de Geghard<br></p>
             </div>
             <div class="detail-box">
-                <h3>Reception</h3>
-                <p><strong>5:00 PM</strong></p>
-                <p>Grand Hotel Yerevan<br>Yerevan, Armenia</p>
+                <h3>Réception</h3>
+                <p><strong>18h00</strong></p>
+                <p>Astafyan Hall<br>Jrvej</p>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp-section">
-        <h2>RSVP</h2>
-        <p>Please let us know if you can make it by September 1st, 2026.</p>
+        <h2>Formulaire de présence</h2>
+        <p>À remplir avant le 01 Août 2026.</p>
         
         <!-- Replace YOUR_FORM_ID with your Formspree ID -->
         <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="rsvp-form">
             <div class="form-group">
-                <label for="guest-name">Guest Name(s):</label>
+                <label for="guest-name">Nom complet :</label>
                 <input type="text" id="guest-name" name="guest_name" required placeholder="John & Jane Doe">
             </div>
 
             <div class="form-group">
-                <label for="attending">Will you be attending?</label>
+                <label for="attending">Serez-vous présents ?</label>
                 <select id="attending" name="attending" required>
-                    <option value="" disabled selected>Please select...</option>
-                    <option value="yes">Joyfully Accept</option>
-                    <option value="no">Regretfully Decline</option>
+                    <option value="" disabled selected>Sélectionner...</option>
+                    <option value="yes">Evidemment !</option>
+                    <option value="no">Malheureusement non...</option>
                 </select>
             </div>
 
-            <div class="form-group">
-                <label for="dietary">Dietary Restrictions / Notes:</label>
-                <textarea id="dietary" name="dietary_restrictions" rows="3" placeholder="Any allergies or song requests?"></textarea>
-            </div>
-
-            <button type="submit" class="submit-btn">Send RSVP</button>
+            <button type="submit" class="submit-btn">Envoyer</button>
         </form>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>Made with ❤️ for Sevo & Lara's Harsaniq</p>
+        <p>Fais avec ❤️ pour le mariage de Sevo et Lara</p>
     </footer>
 
     <script src="script.js"></script>
