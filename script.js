@@ -17,6 +17,16 @@ const updateCountdown = setInterval(function() {
     if (distance < 0) {
         clearInterval(updateCountdown);
         countdownElement.innerHTML = "JOUR J !!!!!";
+
+        // Trigger the confetti effect using the website's theme colors
+        if (typeof confetti === 'function') {
+            confetti({
+                particleCount: 150,
+                spread: 100,
+                origin: { y: 0.6 },
+                colors: ['#d4af37', '#ffffff', '#2c2c2c']
+            });
+        }
         return;
     }
 
