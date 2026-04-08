@@ -69,7 +69,7 @@ nav a:hover {
     box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
     backdrop-filter: blur(5px); /* Modern frosted glass effect */
     -webkit-backdrop-filter: blur(5px);
-    max-width: 90%;
+    max-width: 500px; /* Made the box narrower */
 }
 
 .hero h1 {
@@ -119,8 +119,9 @@ h2 {
 .details > h2, .rsvp-section > h2, .rsvp-section > p {
     background: rgba(255, 255, 255, 0.85);
     display: table; /* Keeps the box tightly wrapped around the text */
-    margin: 0 auto 1rem auto;
-    padding: 0.5rem 2rem;
+    margin: 0 auto 1.5rem auto;
+    padding: 0.5rem 1.2rem; /* Reduced padding to make it narrower */
+    max-width: 90%; /* Ensures long text wraps elegantly on mobile */
     border-radius: 8px;
 }
 
@@ -229,4 +230,16 @@ footer {
     .hero, .details, .rsvp-section {
         background-attachment: scroll !important;
     }
+}
+
+/* Scroll Fade-in Animation Classes */
+.fade-in {
+    opacity: 0;
+    transform: translateY(30px); /* Starts slightly lower */
+    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+}
+
+.fade-in.visible {
+    opacity: 1;
+    transform: translateY(0); /* Moves to original position smoothly */
 }
