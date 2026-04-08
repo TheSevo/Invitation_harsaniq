@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sevo & Lara ❤️</title>
-    <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="style.css?v=2">
 </head>
 <body>
@@ -21,7 +20,7 @@
 
     <!-- Hero / Landing Section -->
     <section id="home" class="hero">
-        <div class="hero-content">
+        <div class="hero-content fade-in">
             <h1>Sevo & Lara</h1>
             <p>On se marie !</p>
             <h2 id="countdown">Loading countdown...</h2>
@@ -31,14 +30,14 @@
 
     <!-- Wedding Details Section -->
     <section id="details" class="details">
-        <h2>Détails</h2>
+        <h2 class="fade-in">Détails</h2>
         <div class="details-container">
-            <div class="detail-box">
+            <div class="detail-box fade-in">
                 <h3>Cérémonie</h3>
                 <p><strong>14h00</strong></p>
                 <p>Monastère de Geghard<br></p>
             </div>
-            <div class="detail-box">
+            <div class="detail-box fade-in">
                 <h3>Réception</h3>
                 <p><strong>18h00</strong></p>
                 <p>Astafyan Hall<br>Jrvej</p>
@@ -48,11 +47,11 @@
 
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp-section">
-        <h2>Formulaire de présence</h2>
-        <p>À remplir avant le 01 Août 2026.</p>
+        <h2 class="fade-in">Formulaire de présence</h2>
+        <p class="fade-in">À remplir avant le 01 Août 2026.</p>
         
         <!-- Replace YOUR_FORM_ID with your Formspree ID -->
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="rsvp-form">
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="rsvp-form fade-in">
             <div class="form-group">
                 <label for="guest-name">Nom complet :</label>
                 <input type="text" id="guest-name" name="guest_name" required placeholder="Prénom Nom">
