@@ -64,10 +64,10 @@ rsvpForm.addEventListener('submit', function(e) {
     // 1. Paste your Google Form ID into this URL (Make sure it ends in /formResponse)
     const formURL = 'https://docs.google.com/forms/d/e/1FAIpQLSfscczibt38T-5bXpVERW-3XMvR7naB7LMcOObqQZURWo54Aw/formResponse';
     
-    const data = new FormData();
-    // 2. Replace the 'entry.111111' numbers with your actual entry IDs from the pre-filled link
-    data.append('entry.2069339004', document.getElementById('guest-name').value);
-    data.append('entry.1580326361', document.getElementById('attending').value);
+    // Use URLSearchParams to ensure the data is sent in the correct, simple format
+    const formData = new URLSearchParams();
+    formData.append('entry.2069339004', document.getElementById('guest-name').value);
+    formData.append('entry.1580326361', document.getElementById('attending').value);
 
     const submitButton = rsvpForm.querySelector('.submit-btn');
 
@@ -75,7 +75,7 @@ rsvpForm.addEventListener('submit', function(e) {
     submitButton.textContent = 'Envoi en cours...';
 
     // Send the data invisibly to Google Forms (which passes it directly to your Sheet)
-    fetch(formURL, { method: 'POST', mode: 'no-cors', body: data })
+    fetch(formURL, { method: 'POST', mode: 'no-cors', body: formData })
         .then(() => {
             formStatus.textContent = 'Merci ! Votre réponse a bien été enregistrée.';
             formStatus.style.color = '#d4af37';
