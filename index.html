@@ -4,9 +4,23 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sevak & Lara ❤️</title>
-    <link rel="stylesheet" href="style.css?v=5">
+    <link rel="stylesheet" href="style.css?v=4">
 </head>
-<body>
+<body class="no-scroll">
+    <!-- Click to Enter Screen -->
+    <div id="enter-screen">
+        <div class="enter-content">
+            <h1>Sevak & Lara</h1>
+            <p>Mettez le son pour une meilleure expérience 🎵</p>
+            <button id="enter-btn">Entrer</button>
+        </div>
+    </div>
+
+    <!-- Hidden Audio Element -->
+    <audio id="bg-music" loop>
+        <source src="votre-chanson.mp3" type="audio/mpeg">
+    </audio>
+
     <!-- Navigation -->
     <header>
         <nav>
@@ -51,7 +65,6 @@
         <p class="fade-in">À remplir avant le 01 Août 2026.</p>
         
         <form action="https://docs.google.com/forms/d/e/1FAIpQLSfscczibt38T-5bXpVERW-3XMvR7naB7LMcOObqQZURWo54Aw/formResponse" method="POST" target="hidden_iframe" id="rsvp-form" class="rsvp-form fade-in">
-        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfscczibt38T-5bXpVERW-3XMvR7naB7LMcOObqQZURWo54Aw/formResponse" method="POST" id="rsvp-form" class="rsvp-form fade-in">
             <div class="form-group">
                 <label for="guest-name">Nom complet :</label>
                 <input type="text" id="guest-name" name="entry.2069339004" required placeholder="Prénom Nom">
@@ -79,6 +92,6 @@
         <p>Fais avec ❤️ pour le mariage de Sevak et Lara</p>
     </footer>
 
-    <script src="script.js?v=5"></script>
+    <script src="script.js?v=4"></script>
 </body>
 </html>
