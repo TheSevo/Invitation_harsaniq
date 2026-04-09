@@ -50,15 +50,15 @@
         <h2 class="fade-in">Formulaire de présence</h2>
         <p class="fade-in">À remplir avant le 01 Août 2026.</p>
         
-        <form id="rsvp-form" class="rsvp-form fade-in">
+        <form action="https://docs.google.com/forms/d/e/1FAIpQLSfscczibt38T-5bXpVERW-3XMvR7naB7LMcOObqQZURWo54Aw/formResponse" method="POST" target="hidden_iframe" id="rsvp-form" class="rsvp-form fade-in">
             <div class="form-group">
                 <label for="guest-name">Nom complet :</label>
-                <input type="text" id="guest-name" name="guest_name" required placeholder="Prénom Nom">
+                <input type="text" id="guest-name" name="entry.2069339004" required placeholder="Prénom Nom">
             </div>
 
             <div class="form-group">
                 <label for="attending">Serez-vous présents ?</label>
-                <select id="attending" name="attending" required>
+                <select id="attending" name="entry.1580326361" required>
                     <option value="" disabled selected>Sélectionner...</option>
                     <option value="Evidemment !">Evidemment !</option>
                     <option value="Malheureusement non...">Malheureusement non...</option>
@@ -68,6 +68,9 @@
             <button type="submit" class="submit-btn">Envoyer</button>
             <div id="form-status"></div>
         </form>
+
+        <!-- Hidden iframe to silently capture the Google Form redirect -->
+        <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;"></iframe>
     </section>
 
     <!-- Footer -->
@@ -75,6 +78,6 @@
         <p>Fais avec ❤️ pour le mariage de Sevo et Lara</p>
     </footer>
 
-    <script src="script.js?v=2"></script>
+    <script src="script.js?v=3"></script>
 </body>
 </html>
