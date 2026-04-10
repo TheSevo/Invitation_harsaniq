@@ -7,12 +7,19 @@
     <link rel="stylesheet" href="style.css?v=4">
 </head>
 <body class="no-scroll">
+    <!-- Language Switcher -->
+    <div class="lang-switcher">
+        <button class="lang-btn active" data-lang="fr">FR</button>
+        <button class="lang-btn" data-lang="ru">RU</button>
+        <button class="lang-btn" data-lang="hy">HY</button>
+    </div>
+
     <!-- Click to Enter Screen -->
     <div id="enter-screen">
         <div class="enter-content">
-            <h1>Sevak & Lara</h1>
-            <p>Mettez le son pour une meilleure expérience 🎵</p>
-            <button id="enter-btn">Entrer</button>
+            <h1 data-i18n="names">Sevak & Lara</h1>
+            <p data-i18n="sound_msg">Mettez le son pour une meilleure expérience 🎵</p>
+            <button id="enter-btn" data-i18n="enter">Entrer</button>
         </div>
     </div>
 
@@ -25,9 +32,9 @@
     <header>
         <nav>
             <ul>
-                <li><a href="#home">Accueil</a></li>
-                <li><a href="#details">Détails</a></li>
-                <li><a href="#rsvp">Formulaire</a></li>
+                <li><a href="#home" data-i18n="nav_home">Accueil</a></li>
+                <li><a href="#details" data-i18n="nav_details">Détails</a></li>
+                <li><a href="#rsvp" data-i18n="nav_rsvp">Formulaire</a></li>
             </ul>
         </nav>
     </header>
@@ -35,51 +42,51 @@
     <!-- Hero / Landing Section -->
     <section id="home" class="hero">
         <div class="hero-content fade-in">
-            <h1>Sevak & Lara</h1>
-            <p>On se marie !</p>
+            <h1 data-i18n="names">Sevak & Lara</h1>
+            <p data-i18n="we_getting_married">On se marie !</p>
             <h2 id="countdown">Loading countdown...</h2>
-            <p class="date-location">15 Août 2026 • Arménie</p>
+            <p class="date-location" data-i18n="date_location">15 Août 2026 • Arménie</p>
         </div>
     </section>
 
     <!-- Wedding Details Section -->
     <section id="details" class="details">
-        <h2 class="fade-in">Détails</h2>
+        <h2 class="fade-in" data-i18n="details_title">Détails</h2>
         <div class="details-container">
             <div class="detail-box fade-in">
-                <h3>Cérémonie</h3>
+                <h3 data-i18n="ceremony">Cérémonie</h3>
                 <p><strong>14h00</strong></p>
-                <p>Monastère de Geghard<br></p>
+                <p data-i18n="geghard">Monastère de Geghard<br></p>
             </div>
             <div class="detail-box fade-in">
-                <h3>Réception</h3>
+                <h3 data-i18n="reception">Réception</h3>
                 <p><strong>18h00</strong></p>
-                <p>Astafyan Hall<br>Jrvej</p>
+                <p data-i18n="astafyan">Astafyan Hall<br>Jrvej</p>
             </div>
         </div>
     </section>
 
     <!-- RSVP Section -->
     <section id="rsvp" class="rsvp-section">
-        <h2 class="fade-in">Formulaire de présence</h2>
-        <p class="fade-in">À remplir avant le 01 Août 2026.</p>
+        <h2 class="fade-in" data-i18n="rsvp_title">Formulaire de présence</h2>
+        <p class="fade-in" data-i18n="rsvp_deadline">À remplir avant le 01 Août 2026.</p>
         
         <form action="https://docs.google.com/forms/d/e/1FAIpQLSfscczibt38T-5bXpVERW-3XMvR7naB7LMcOObqQZURWo54Aw/formResponse" method="POST" target="hidden_iframe" id="rsvp-form" class="rsvp-form fade-in">
             <div class="form-group">
-                <label for="guest-name">Nom complet :</label>
-                <input type="text" id="guest-name" name="entry.2069339004" required placeholder="Prénom Nom">
+                <label for="guest-name" data-i18n="full_name">Nom complet :</label>
+                <input type="text" id="guest-name" name="entry.2069339004" required placeholder="Prénom Nom" data-i18n-placeholder="name_placeholder">
             </div>
 
             <div class="form-group">
-                <label for="attending">Serez-vous présents ?</label>
+                <label for="attending" data-i18n="will_attend">Serez-vous présents ?</label>
                 <select id="attending" name="entry.1580326361" required>
-                    <option value="" disabled selected>Sélectionner...</option>
-                    <option value="Evidemment !">Evidemment !</option>
-                    <option value="Malheureusement non...">Malheureusement non...</option>
+                    <option value="" disabled selected data-i18n="select_option">Sélectionner...</option>
+                    <option value="Evidemment !" data-i18n="yes">Evidemment !</option>
+                    <option value="Malheureusement non..." data-i18n="no">Malheureusement non...</option>
                 </select>
             </div>
 
-            <button type="submit" class="submit-btn">Envoyer</button>
+            <button type="submit" class="submit-btn" data-i18n="send">Envoyer</button>
             <div id="form-status"></div>
         </form>
 
@@ -89,7 +96,7 @@
 
     <!-- Footer -->
     <footer>
-        <p>Fais avec ❤️ pour le mariage de Sevak et Lara</p>
+        <p data-i18n="footer">Fais avec ❤️ pour le mariage de Sevak et Lara</p>
     </footer>
 
     <!-- Librairie pour les confettis -->
