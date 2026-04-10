@@ -85,9 +85,11 @@ document.getElementById('hidden_iframe').addEventListener('load', function() {
         formStatus.style.color = '#d4af37';
         rsvpForm.reset();
 
-        const submitButton = rsvpForm.querySelector('.submit-btn');
-        submitButton.disabled = false;
-        submitButton.textContent = 'Envoyer';
+        // Cache les champs et le bouton pour une interface plus propre après l'envoi
+        const formElementsToHide = rsvpForm.querySelectorAll('.form-group, .submit-btn');
+        formElementsToHide.forEach(el => {
+            el.style.display = 'none';
+        });
         submitted = false;
     }
 });
