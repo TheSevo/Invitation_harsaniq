@@ -37,7 +37,9 @@ const translations = {
         msg_no: "C'est noté. Vous nous manquerez ! 🥺",
         msg_default: "Merci ! Votre réponse a bien été enregistrée.",
         msg_error: "Veuillez indiquer si vous serez présents avant d'envoyer.",
-        msg_sending: "Envoi en cours..."
+        msg_sending: "Envoi en cours...",
+        choose_nav: "Choisir l'application :",
+        cancel: "Annuler"
     },
     ru: {
         page_title: "Севак и Лара ❤️",
@@ -76,7 +78,9 @@ const translations = {
         msg_no: "Принято. Нам будет вас не хватать! 🥺",
         msg_default: "Спасибо! Ваш ответ записан.",
         msg_error: "Пожалуйста, укажите, будете ли вы присутствовать, прежде чем отправлять.",
-        msg_sending: "Отправка..."
+        msg_sending: "Отправка...",
+        choose_nav: "Выберите навигатор:",
+        cancel: "Отмена"
     },
     hy: {
         page_title: "Սևակ և Լարա ❤️",
@@ -115,7 +119,9 @@ const translations = {
         msg_no: "Նշված է: Մենք ձեզ կկարոտենք:",
         msg_default: "Շնորհակալություն: Ձեր պատասխանը գրանցված է:",
         msg_error: "Խնդրում ենք նշել՝ արդյոք կներկայանաք, նախքան ուղարկելը:",
-        msg_sending: "Ուղարկվում է..."
+        msg_sending: "Ուղարկվում է...",
+        choose_nav: "Ընտրեք հավելվածը՝",
+        cancel: "Չեղարկել"
     }
 };
 
@@ -297,3 +303,30 @@ function openTaxiApp(event, appUrl, webUrl) {
         }
     }, 1500);
 }
+
+// --- Fonctionnalité du Menu de Navigation (Maps) ---
+const navModal = document.getElementById('nav-modal');
+
+function openMapMenu(event, lat, lon) {
+    event.preventDefault(); // Empêche de remonter en haut de la page
+    
+    // Mise à jour des liens avec les bonnes coordonnées
+    document.getElementById('link-gmaps').href = `https://www.google.com/maps/dir/?api=1&destination=${lat},${lon}`;
+    document.getElementById('link-waze').href = `https://waze.com/ul?ll=${lat},${lon}&navigate=yes`;
+    document.getElementById('link-amaps').href = `http://maps.apple.com/?daddr=${lat},${lon}`;
+    document.getElementById('link-yandex').href = `https://yandex.com/maps/?rtext=~${lat},${lon}`;
+    
+    // Affichage de la pop-up
+    navModal.classList.remove('hidden-screen');
+}
+
+function closeMapMenu() {
+    navModal.classList.add('hidden-screen');
+}
+
+// Fermer la pop-up si on clique à l'extérieur (dans la zone sombre)
+navModal.addEventListener('click', function(e) {
+    if (e.target === navModal) {
+        closeMapMenu();
+    }
+});
