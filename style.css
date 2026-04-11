@@ -18,10 +18,10 @@ body {
 
 /* Language Dropdown */
 .lang-dropdown {
-    position: fixed;
-    top: 14px;
+    position: absolute;
+    top: 50%;
     right: 20px;
-    z-index: 10000; /* Toujours au-dessus de tout */
+    transform: translateY(-50%);
 }
 
 .lang-dropdown-btn {
@@ -78,6 +78,8 @@ body {
     gap: 8px;
     font-size: 0.9rem;
     font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 1px;
     transition: background 0.2s;
 }
 
@@ -88,7 +90,6 @@ body {
 
 @media (max-width: 600px) {
     .lang-dropdown {
-        top: 12px;
         right: 10px;
     }
     .lang-dropdown-btn {
