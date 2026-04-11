@@ -11,6 +11,8 @@ const translations = {
         we_getting_married: "On se marie !",
         date_location: "15 Août 2026 • Arménie",
         details_title: "Détails",
+        time_ceremony: "14h00",
+        time_reception: "18h00",
         ceremony: "Cérémonie",
         geghard: "Monastère de Geghard<br>",
         reception: "Réception",
@@ -52,6 +54,8 @@ const translations = {
         we_getting_married: "Мы женимся!",
         date_location: "15 Августа 2026 • Армения",
         details_title: "Детали",
+        time_ceremony: "14:00",
+        time_reception: "18:00",
         ceremony: "Церемония",
         geghard: "Монастырь Гегард<br>",
         reception: "Банкет",
@@ -93,6 +97,8 @@ const translations = {
         we_getting_married: "Մենք ամուսնանում ենք!",
         date_location: "15 Օգոստոս 2026 • Հայաստան",
         details_title: "Մանրամասներ",
+        time_ceremony: "14:00",
+        time_reception: "18:00",
         ceremony: "Պսակադրություն",
         geghard: "Գեղարդի վանք<br>",
         reception: "Տոնախմբություն",
@@ -262,9 +268,9 @@ if (enterBtn) {
 
 // --- Fonctionnalité de changement de langue ---
 const langFlags = { 
-    fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon"> FR', 
-    hy: '<img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon"> HY', 
-    ru: '<img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon"> RU' 
+    fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon">FR', 
+    hy: '<img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon">HY', 
+    ru: '<img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">RU' 
 };
 
 function setLanguage(lang) {
@@ -285,7 +291,7 @@ function setLanguage(lang) {
 
     // Met à jour le bouton de la langue actuelle
     document.querySelectorAll('.lang-btn-current-text').forEach(btn => {
-        btn.innerHTML = `${langFlags[lang]} <span style="font-size:0.7em">▼</span>`;
+        btn.innerHTML = `${langFlags[lang]}<span style="font-size:0.7em">▼</span>`;
     });
 }
 
