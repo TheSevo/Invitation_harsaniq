@@ -329,39 +329,6 @@ h2 {
     margin-top: 1.5rem;
 }
 
-.action-btn {
-    display: block;
-    padding: 0.8rem 1rem;
-    border-radius: 8px;
-    text-decoration: none;
-    font-weight: 600;
-    font-size: 0.9rem;
-    transition: transform 0.2s ease, box-shadow 0.2s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-}
-
-.action-btn:hover {
-    transform: translateY(-2px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-}
-
-.map-btn {
-    background: #2c2c2c; /* Noir élégant */
-    color: #d4af37; /* Or pour le texte et l'icône */
-    border: none;
-    border-radius: 25px; /* Bords très arrondis (façon pilule) */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 8px; /* Espace entre le texte et l'icône */
-}
-
-.map-btn:hover {
-    background: #1a1a1a; /* Noir profond au survol */
-    color: #fff; /* Le texte et l'icône deviennent blancs au survol */
-}
-
 .taxi-buttons {
     display: flex;
     justify-content: center;
@@ -389,6 +356,24 @@ h2 {
     height: 100%;
     object-fit: cover;
     display: block;
+}
+
+.map-app-btn {
+    background: #2c2c2c;
+    color: #d4af37;
+    display: flex !important; /* Force le flex pour centrer l'icône */
+    align-items: center;
+    justify-content: center;
+}
+
+.map-app-btn svg {
+    width: 32px;
+    height: 32px;
+}
+
+.map-app-btn:hover {
+    background: #1a1a1a;
+    color: #fff;
 }
 
 /* RSVP Form */
