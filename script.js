@@ -56,7 +56,7 @@ const translations = {
         details_title: "Детали",
         time_ceremony: "14:00",
         time_reception: "18:00",
-        ceremony: "Церемония",
+        ceremony: "Венчание",
         geghard: "Монастырь Гегард<br>",
         reception: "Банкет",
         astafyan: "Astafyan Hall<br>Джрвеж",
