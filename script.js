@@ -268,9 +268,9 @@ if (enterBtn) {
 
 // --- Fonctionnalité de changement de langue ---
 const langFlags = { 
-    fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon">FR', 
-    hy: '<img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon">HY', 
-    ru: '<img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">RU' 
+    fr: '<img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon">', 
+    hy: '<img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon">', 
+    ru: '<img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">' 
 };
 
 function setLanguage(lang) {
