@@ -47,11 +47,11 @@ body {
 .lang-dropdown-content {
     display: none;
     position: absolute;
-    right: 0;
+    left: -15px; /* Aligne parfaitement les drapeaux verticalement */
     top: 100%;
     margin-top: 16px; /* Aligné précisément avec le bas de la barre */
     background-color: rgba(255, 255, 255, 0.95); /* Même fond que la barre */
-    min-width: 100px;
+    min-width: auto; /* S'ajuste élégamment sans déborder de l'écran */
     box-shadow: none; /* Aucune ombre */
     border-radius: 0; /* Angles droits */
     overflow: hidden;
@@ -82,6 +82,7 @@ body {
     text-transform: uppercase;
     letter-spacing: 1px;
     transition: background 0.2s;
+    white-space: nowrap; /* Empêche le texte d'aller à la ligne */
 }
 
 .lang-dropdown-content a:hover {
@@ -119,6 +120,7 @@ body {
 .enter-lang-dropdown .lang-dropdown-content {
     margin-top: 10px;
     border-top: 1px solid #eaeaea;
+    left: 0; /* Aligne avec l'espacement naturel du bouton d'accueil */
 }
 
 /* Navigation Menu */
