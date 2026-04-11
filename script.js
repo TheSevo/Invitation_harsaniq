@@ -255,11 +255,15 @@ rsvpForm.addEventListener('submit', function(event) {
 
 // Click to Enter & Audio Logic
 const enterScreen = document.getElementById('enter-screen');
-const enterBtn = document.getElementById('enter-btn');
+const enterLangBtns = document.querySelectorAll('.enter-lang-btn');
 const bgMusic = document.getElementById('bg-music');
 
-if (enterBtn) {
-    enterBtn.addEventListener('click', () => {
+enterLangBtns.forEach(btn => {
+    btn.addEventListener('click', (e) => {
+        // Change la langue en fonction du bouton cliqué
+        const selectedLang = e.currentTarget.getAttribute('data-lang');
+        setLanguage(selectedLang);
+
         // Play the music
         bgMusic.play().catch(error => console.log("Audio playback failed:", error));
         
@@ -275,7 +279,7 @@ if (enterBtn) {
             }
         }, 4000);
     });
-}
+});
 
 // Fait disparaître l'indicateur dès que l'utilisateur commence à scroller
 window.addEventListener('scroll', () => {
