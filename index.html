@@ -10,20 +10,14 @@
 
     <!-- Click to Enter Screen -->
     <div id="enter-screen">
-        <!-- Menu des langues pour l'écran d'accueil -->
-        <div class="lang-dropdown enter-lang-dropdown">
-            <button class="lang-dropdown-btn lang-btn-current-text"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon"><span class="lang-text">FR</span><span style="font-size:0.7em">▼</span></button>
-            <div class="lang-dropdown-content">
-                <a href="#" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon">FR</a>
-                <a href="#" data-lang="hy"><img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon">HY</a>
-                <a href="#" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon">RU</a>
-            </div>
-        </div>
-
         <div class="enter-content">
             <h1 data-i18n="names">Sevak & Lara</h1>
             <p data-i18n="sound_msg">Mettez le son pour une meilleure expérience 🎵</p>
-            <button id="enter-btn" data-i18n="enter">Entrer</button>
+            <div class="enter-lang-selection">
+                <button class="enter-lang-btn" data-lang="fr"><img src="https://flagcdn.com/w20/fr.png" alt="FR" class="flag-icon"> Français</button>
+                <button class="enter-lang-btn" data-lang="hy"><img src="https://flagcdn.com/w20/am.png" alt="AM" class="flag-icon"> Հայերեն</button>
+                <button class="enter-lang-btn" data-lang="ru"><img src="https://flagcdn.com/w20/ru.png" alt="RU" class="flag-icon"> Русский</button>
+            </div>
         </div>
     </div>
 
